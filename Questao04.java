@@ -33,7 +33,7 @@ public class Questao04 {
         System.out.print("BEM VINDO!!!\n"
                 + "AEROPORTO\n");
 
-        for (int i = 0; i < 2; i++) {
+        for (int i = 0; i < numeroVoo.length; i++) {
 
             System.out.print("\nNúmero do voo: ");
             numeroVoo[i] = ler.nextInt();
