@@ -25,52 +25,156 @@ public class Questao04 {
 
         String[] origem = new String[12];
         String[] destino = new String[12];
-        String[] numeroVoo = new String[12];
+        int[] numeroVoo = new int[12];
         int[] lugaresDisponiveis = new int[12];
 
         int opcao;
 
-        for (int i = 0; i < numeroVoo.length; i++ ) {
-            
-            System.out.print("BEM VINDO!!!\n"
-                    + "AEROPORTO\n\n"
-                    + "Número do voo: ");
-            numeroVoo[i] = ler.nextLine();
+        System.out.print("BEM VINDO!!!\n"
+                + "AEROPORTO\n");
+
+        for (int i = 0; i < 2; i++) {
+
+            System.out.print("\nNúmero do voo: ");
+            numeroVoo[i] = ler.nextInt();
+            ler.nextLine();
             System.out.print("Origem: ");
             origem[i] = ler.nextLine();
             System.out.print("Destino: ");
             destino[i] = ler.nextLine();
             System.out.print("Número de lugares disponivel: ");
             lugaresDisponiveis[i] = ler.nextInt();
-            
+            ler.nextLine();
+
         }
 
-        System.out.print("1 - CONSULTAR\n"
-                + "2 - EFETUAR RESERVA\n"
-                + "3 - SAIR\n"
-                + "INFORME: ");
-        opcao = ler.nextInt();
-        
-        if (opcao == 1){
+        while (true) {
             
-            System.out.print("CONSULTAR\n\n"
-                    + "1 - Número do voo\n"
-                    + "2 - Origem\n"
-                    + "3 - Destino\n"
-                    + "Informe: ");
+            System.out.print("\n1 - CONSULTAR\n"
+                    + "2 - EFETUAR RESERVA\n"
+                    + "3 - SAIR\n"
+                    + "INFORME: ");
             opcao = ler.nextInt();
-            
-            if (opcao == 1){
+
+            if (opcao == 1) {
+
+                System.out.print("CONSULTAR\n\n"
+                        + "1 - Número do voo\n"
+                        + "2 - Origem\n"
+                        + "3 - Destino\n"
+                        + "Informe: ");
+                opcao = ler.nextInt();
+
+                if (opcao == 1) {
+
+                    System.out.print("\nQual o número do voo: ");
+                    int consultarNumeroVoo = ler.nextInt();
+
+                    for (int i = 0; i < numeroVoo.length; i++) {
+
+                        if (consultarNumeroVoo == numeroVoo[i]) {
+
+                            System.out.println("\nNúmero do Voo: " + numeroVoo[i]);
+                            System.out.println("Origem: " + origem[i]);
+                            System.out.println("Destino: " + destino[i]);
+                            System.out.println("Lugares disponiveis: " + lugaresDisponiveis[i] + "\n");
+
+                        }
+
+                    }
+
+                }
+
+                if (opcao == 2) {
+
+                    System.out.print("\nQual a origem: ");
+                    ler.nextLine();
+                    String consultarOrigem = ler.nextLine();
+
+                    for (int i = 0; i < origem.length; i++) {
+
+                        if (consultarOrigem.equalsIgnoreCase(origem[i])) {
+
+                            System.out.println("\nNúmero do Voo: " + numeroVoo[i]);
+                            System.out.println("Origem: " + origem[i]);
+                            System.out.println("Destino: " + destino[i]);
+                            System.out.println("Lugares disponiveis: " + lugaresDisponiveis[i] + "\n");
+
+                        }
+
+                    }
+
+                }
+
+                if (opcao == 3) {
+
+                    System.out.print("\nQual o destino: ");
+                    ler.nextLine();
+                    String consultarDestino = ler.nextLine();
+
+                    for (int i = 0; i < destino.length; i++) {
+
+                        if (consultarDestino.equalsIgnoreCase(destino[i])) {
+
+                            System.out.println("\nNúmero do Voo: " + numeroVoo[i]);
+                            System.out.println("Origem: " + origem[i]);
+                            System.out.println("Destino: " + destino[i]);
+                            System.out.println("Lugares disponiveis: " + lugaresDisponiveis[i] + "\n");
+
+                        }
+
+                    }
+
+                }
+
+            } else if (opcao == 2) {
                 
-                System.out.print("Qual o número do voo");
+                System.out.println("\nEFETUAR RESERVA");
+                System.out.print("Informe o número do voo: ");
+                int reservarNumeroVoo = ler.nextInt();
                 
+                for (int i = 0; i < numeroVoo.length; i++){
+                    
+                    if (reservarNumeroVoo == numeroVoo[i]) {
+                        
+                        if (lugaresDisponiveis[i] >= 1){
+                            
+                        System.out.print("RESERVA CONFIRMADA\n");
+                        
+                        lugaresDisponiveis[i] -= 1;
+                        
+                        break;
+                        
+                        } else {
+                            
+                            System.out.print("VOO LOTADO\n");
+                            
+                            break;
+                            
+                        }
+                        
+                    }
+                        System.out.print("VOO INEXISTENTE\n");
+                        
+                        break;
+
+                } 
                 
-                for (int i = 0; i < )
+
+            } else if (opcao == 3){
+                
+                break;
+                
+            } else {
+                
+                while (opcao != 1 || opcao != 2 || opcao != 2){
+                    
+                    System.out.print("VALOR INVALIDO");
+                    opcao = ler.nextInt();
+                    
+                }
                 
             }
-            
-            
         }
-
     }
 }
