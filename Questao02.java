@@ -11,8 +11,8 @@ public class Questao02 {
 
         Scanner ler = new Scanner(System.in);
 
-        int[] primeiroVetor = new int[8];
-        int[] segundoVetor = new int[8];
+        int[] primeiroVetor = new int[10];
+        int[] segundoVetor = new int[10];
         ArrayList<Integer> numerosIntercalados = new ArrayList<Integer>();
 
         System.out.print("PRIMEIRO VETOR\n");
